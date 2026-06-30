@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Yu Gothic", sans-serif;
+  background: linear-gradient(180deg, #0f172a 0%, #1e3a8a 100%);
+  color: #fef3c7;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.game-shell {
+  border: 4px solid #fef3c7;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.45);
+  background: #111827;
+}
+
+canvas {
+  display: block;
+  image-rendering: pixelated;
+}
