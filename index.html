@@ -10,6 +10,22 @@
   <div class="game-shell">
     <canvas id="game" width="960" height="540"></canvas>
   </div>
-  <script src="script.js"></script>
+  <button id="open-stage-select" class="stage-select-button">Stage Select</button>
+
+  <div id="stage-select" class="stage-select-overlay" hidden>
+    <div class="stage-select">
+      <h2>ステージ選択</h2>
+      <div class="stage-buttons">
+        <button data-stage="0">1: 星の砂丘</button>
+        <button data-stage="1">2: 霧の峡谷</button>
+        <button data-stage="2">3: 氷の空中島</button>
+        <button data-stage="3">4: 夕暮れの遊園地</button>
+        <button data-stage="4">5: 地底の溶岩巨洞</button>
+      </div>
+      <button id="close-stage-select" class="close">閉じる</button>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
 </body>
 </html>

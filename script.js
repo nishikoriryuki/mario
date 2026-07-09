@@ -1,3 +1,9 @@
+import { stage1Data } from './stages/stage1.js';
+import { stage2Data } from './stages/stage2.js';
+import { stage3Data } from './stages/stage3.js';
+import { stage4Data } from './stages/stage4.js';
+import { stage5Data } from './stages/stage5.js';
+
 const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
 
@@ -177,109 +183,7 @@ function playGoalSound() {
   });
 }
 
-const STAGES = [
-  {
-    name: '星の砂丘',
-    worldWidth: 3200,
-    startX: 120,
-    startY: 340,
-    goal: { x: 3000, y: 260, w: 70, h: 120 },
-    blocks: [
-      { x: 0, y: 420, w: 1600, h: 140, type: 'ground' },
-      { x: 1640, y: 420, w: 640, h: 140, type: 'ground' },
-      { x: 2360, y: 420, w: 280, h: 140, type: 'ground' },
-      { x: 2720, y: 420, w: 240, h: 140, type: 'ground' },
-      { x: 280, y: 360, w: 140, h: 20, type: 'platform' },
-      { x: 520, y: 320, w: 120, h: 20, type: 'platform' },
-      { x: 760, y: 280, w: 120, h: 20, type: 'platform' },
-      { x: 1040, y: 340, w: 140, h: 20, type: 'platform' },
-      { x: 1320, y: 300, w: 120, h: 20, type: 'platform' },
-      { x: 1580, y: 260, w: 120, h: 20, type: 'platform' },
-      { x: 1860, y: 220, w: 120, h: 20, type: 'platform' },
-      { x: 2200, y: 320, w: 180, h: 20, type: 'platform' },
-      { x: 2500, y: 280, w: 120, h: 20, type: 'platform' },
-      { x: 2800, y: 360, w: 120, h: 20, type: 'platform' },
-      { x: 1800, y: 420, w: 160, h: 140, type: 'ground' },
-      { x: 2080, y: 420, w: 180, h: 140, type: 'ground' },
-      { x: 2460, y: 420, w: 140, h: 140, type: 'ground' },
-      { x: 2960, y: 420, w: 240, h: 140, type: 'ground' }
-    ],
-    enemies: [
-      { x: 380, y: 392, vx: 1.1 },
-      { x: 600, y: 292, vx: -1.2 },
-      { x: 1120, y: 316, vx: 1.0 },
-      { x: 1600, y: 232, vx: -1.0 },
-      { x: 2500, y: 392, vx: 1.1 }
-    ],
-    crystals: [
-      { x: 340, y: 330 },
-      { x: 560, y: 292 },
-      { x: 800, y: 250 },
-      { x: 1080, y: 300 },
-      { x: 1360, y: 270 },
-      { x: 1620, y: 230 },
-      { x: 1900, y: 188 },
-      { x: 2260, y: 292 },
-      { x: 2540, y: 250 },
-      { x: 2840, y: 330 }
-    ],
-    powerUps: [
-      { x: 900, y: 250 },
-      { x: 2100, y: 292 }
-    ]
-  },
-  {
-    name: '霧の峡谷',
-    worldWidth: 3600,
-    startX: 120,
-    startY: 340,
-    goal: { x: 3340, y: 260, w: 70, h: 120 },
-    blocks: [
-      { x: 0, y: 420, w: 1600, h: 140, type: 'ground' },
-      { x: 1640, y: 420, w: 620, h: 140, type: 'ground' },
-      { x: 2340, y: 420, w: 700, h: 140, type: 'ground' },
-      { x: 3140, y: 420, w: 460, h: 140, type: 'ground' },
-      { x: 300, y: 360, w: 120, h: 20, type: 'platform' },
-      { x: 520, y: 310, w: 140, h: 20, type: 'platform' },
-      { x: 740, y: 250, w: 120, h: 20, type: 'platform' },
-      { x: 980, y: 330, w: 120, h: 20, type: 'platform' },
-      { x: 1240, y: 290, w: 140, h: 20, type: 'platform' },
-      { x: 1520, y: 250, w: 120, h: 20, type: 'platform' },
-      { x: 1820, y: 220, w: 140, h: 20, type: 'platform' },
-      { x: 2140, y: 320, w: 160, h: 20, type: 'platform' },
-      { x: 2460, y: 280, w: 120, h: 20, type: 'platform' },
-      { x: 2760, y: 340, w: 180, h: 20, type: 'platform' },
-      { x: 3080, y: 290, w: 140, h: 20, type: 'platform' },
-      { x: 1700, y: 420, w: 180, h: 140, type: 'ground' },
-      { x: 2020, y: 420, w: 180, h: 140, type: 'ground' },
-      { x: 2400, y: 420, w: 120, h: 140, type: 'ground' },
-      { x: 2880, y: 420, w: 160, h: 140, type: 'ground' }
-    ],
-    enemies: [
-      { x: 420, y: 392, vx: 1.2 },
-      { x: 760, y: 232, vx: -1.0 },
-      { x: 1260, y: 272, vx: 1.1 },
-      { x: 1880, y: 202, vx: -1.1 },
-      { x: 2480, y: 392, vx: 1.0 }
-    ],
-    crystals: [
-      { x: 360, y: 330 },
-      { x: 620, y: 270 },
-      { x: 860, y: 220 },
-      { x: 1100, y: 300 },
-      { x: 1420, y: 260 },
-      { x: 1760, y: 200 },
-      { x: 2200, y: 292 },
-      { x: 2520, y: 250 },
-      { x: 2840, y: 300 },
-      { x: 3180, y: 260 }
-    ],
-    powerUps: [
-      { x: 1000, y: 300 },
-      { x: 2600, y: 250 }
-    ]
-  }
-];
+const STAGES = [stage1Data, stage2Data, stage3Data, stage4Data, stage5Data];
 
 const keys = {};
 let cameraX = 0;
@@ -307,6 +211,7 @@ class Player {
     this.big = false;
     this.smallH = 44;
     this.bigH = 58;
+    this.currentGround = null;
   }
 
   reset() {
@@ -322,6 +227,7 @@ class Player {
     this.jumpBoost = 0;
     this.big = false;
     this.h = this.smallH;
+    this.currentGround = null;
   }
 
   update() {
@@ -336,7 +242,9 @@ class Player {
       this.vx += 0.18;
       this.facing = 1;
     } else {
-      this.vx *= 0.82;
+      // 滑り判定：足元のブロックに slippery フラグがあると摩擦が小さくなる
+      const friction = (this.onGround && this.currentGround && this.currentGround.slippery) ? 0.96 : 0.82;
+      this.vx *= friction;
     }
 
     if (this.vx > 2.2) this.vx = 2.2;
@@ -356,7 +264,25 @@ class Player {
       this.jumpTimer = 0;
     }
 
-    this.vy += GRAVITY;
+    // 低重力エリア判定（ステージ定義 lowGravityAreas があれば適用）
+    let appliedGravity = GRAVITY;
+    try {
+      const zones = this.gameRef && this.gameRef.currentStage && this.gameRef.currentStage.lowGravityAreas;
+      if (zones && zones.length) {
+        for (const z of zones) {
+          const cx = this.x + this.w / 2;
+          const cy = this.y + this.h / 2;
+          if (cx >= z.x && cx <= z.x + z.w && cy >= z.y && cy <= z.y + z.h) {
+            appliedGravity = GRAVITY * 0.45;
+            break;
+          }
+        }
+      }
+    } catch (e) {
+      appliedGravity = GRAVITY;
+    }
+
+    this.vy += appliedGravity;
     this.vy *= 0.999;
 
     this.x += this.vx;
@@ -397,6 +323,7 @@ class Player {
 
   handleVerticalCollision() {
     this.onGround = false;
+    this.currentGround = null;
     for (const block of this.gameRef.blocks) {
       if (block.type === 'gap') continue;
       if (this.isCollidingWith(block)) {
@@ -404,6 +331,7 @@ class Player {
           this.y = block.y - this.h;
           this.vy = 0;
           this.onGround = true;
+          this.currentGround = block;
         } else if (this.vy < 0 && this.y - this.vy >= block.y + block.h - 2) {
           this.y = block.y + block.h;
           this.vy = 0;
@@ -483,7 +411,7 @@ class Player {
 }
 
 class Enemy {
-  constructor(x, y, speed) {
+  constructor(x, y, speed, options = {}) {
     this.x = x;
     this.y = y;
     this.w = 24;
@@ -492,22 +420,37 @@ class Enemy {
     this.speed = speed;
     this.dead = false;
     this.hitTimer = 0;
+    this.type = options.type || 'walker';
+    this.baseX = x;
+    this.baseY = y;
+    this.range = options.range || 90;
+    this.phase = Math.random() * Math.PI * 2;
   }
 
   update() {
     if (this.dead) return;
 
-    const nextX = this.x + this.vx;
-    const footX = this.vx > 0
-      ? nextX + this.w + 4
-      : nextX - 4;
+    if (this.type === 'flyer') {
+      this.phase += 0.08;
+      this.x += this.vx;
+      this.y = this.baseY + Math.sin(this.phase) * 18;
 
-    const ground = findGroundAt(footX, this.y + this.h + 4);
-
-    if (!ground) {
-      this.vx *= -1;
+      if (this.x <= this.baseX - this.range || this.x >= this.baseX + this.range) {
+        this.vx *= -1;
+      }
     } else {
-      this.x = nextX;
+      const nextX = this.x + this.vx;
+      const footX = this.vx > 0
+        ? nextX + this.w + 4
+        : nextX - 4;
+
+      const ground = findGroundAt(footX, this.y + this.h + 4);
+
+      if (!ground) {
+        this.vx *= -1;
+      } else {
+        this.x = nextX;
+      }
     }
 
     if (this.hitTimer > 0) this.hitTimer--;
@@ -523,17 +466,31 @@ class Enemy {
     ctx.scale(this.vx > 0 ? 1 : -1, 1);
     ctx.translate(-(drawX + this.w / 2), -(drawY + this.h / 2));
 
-    ctx.fillStyle = '#7c3aed';
-    ctx.beginPath();
-    ctx.arc(drawX + 12, drawY + 12, 12, 0, Math.PI * 2);
-    ctx.fill();
+    if (this.type === 'flyer') {
+      ctx.fillStyle = '#fb923c';
+      ctx.beginPath();
+      ctx.ellipse(drawX + 12, drawY + 12, 10, 8, 0, 0, Math.PI * 2);
+      ctx.fill();
 
-    ctx.fillStyle = '#fef3c7';
-    ctx.fillRect(drawX + 5, drawY + 8, 14, 4);
-    ctx.fillStyle = '#111827';
-    ctx.fillRect(drawX + 7, drawY + 10, 3, 3);
-    ctx.fillRect(drawX + 13, drawY + 10, 3, 3);
-    ctx.fillRect(drawX + 8, drawY + 15, 8, 3);
+      ctx.fillStyle = '#fef3c7';
+      ctx.fillRect(drawX + 5, drawY + 10, 14, 4);
+      ctx.fillStyle = '#111827';
+      ctx.fillRect(drawX + 7, drawY + 11, 3, 3);
+      ctx.fillRect(drawX + 13, drawY + 11, 3, 3);
+      ctx.fillRect(drawX + 7, drawY + 16, 10, 3);
+    } else {
+      ctx.fillStyle = '#7c3aed';
+      ctx.beginPath();
+      ctx.arc(drawX + 12, drawY + 12, 12, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = '#fef3c7';
+      ctx.fillRect(drawX + 5, drawY + 8, 14, 4);
+      ctx.fillStyle = '#111827';
+      ctx.fillRect(drawX + 7, drawY + 10, 3, 3);
+      ctx.fillRect(drawX + 13, drawY + 10, 3, 3);
+      ctx.fillRect(drawX + 8, drawY + 15, 8, 3);
+    }
 
     ctx.restore();
   }
@@ -612,6 +569,49 @@ class PowerUp {
   }
 }
 
+class FloatingText {
+  constructor(x, y, text, color = '#fff7ed') {
+    this.x = x;
+    this.y = y;
+    this.text = text;
+    this.color = color;
+    this.life = 40;
+  }
+
+  update() {
+    this.life--;
+    this.y -= 0.7;
+  }
+
+  draw() {
+    if (this.life <= 0) return;
+
+    const alpha = Math.max(0, this.life / 40);
+    const drawX = this.x - cameraX;
+    const drawY = this.y;
+    const padding = 8;
+
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.font = 'bold 14px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.globalCompositeOperation = 'source-over';
+
+    const metrics = ctx.measureText(this.text);
+    const boxW = metrics.width + padding * 2;
+    const boxH = 24;
+
+    ctx.fillStyle = 'rgba(17, 24, 39, 0.95)';
+    ctx.fillRect(drawX - boxW / 2, drawY - boxH / 2, boxW, boxH);
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.9)';
+    ctx.strokeRect(drawX - boxW / 2, drawY - boxH / 2, boxW, boxH);
+    ctx.fillStyle = this.color;
+    ctx.fillText(this.text, drawX, drawY);
+    ctx.restore();
+  }
+}
+
 class Particle {
   constructor(x, y, color, vx, vy) {
     this.x = x;
@@ -646,21 +646,36 @@ class Game {
     this.enemies = [];
     this.crystals = [];
     this.particles = [];
+    this.floatingTexts = [];
     this.blocks = [];
     this.powerUps = [];
     this.goal = { x: 0, y: 0, w: 44, h: 96 };
+    this.staticBlocks = [];
+    this.movingPlatforms = [];
+    this.lavaSurfaceY = HEIGHT;
     this.initStage();
   }
 
   initStage() {
     this.currentStage = STAGES[this.currentStageIndex];
-    this.blocks = this.currentStage.blocks.map((block) => ({ ...block }));
-    this.enemies = this.currentStage.enemies.map((enemy) => new Enemy(enemy.x, enemy.y, enemy.vx));
+    this.staticBlocks = this.currentStage.blocks.map((block) => ({ ...block }));
+    this.movingPlatforms = (this.currentStage.movingPlatforms || []).map((platform) => ({
+      ...platform,
+      baseX: platform.x,
+      baseY: platform.y,
+      phase: Math.random() * Math.PI * 2,
+      moving: true,
+      type: 'platform'
+    }));
+    this.blocks = [...this.staticBlocks, ...this.movingPlatforms.map((p) => ({ ...p }))];
+    this.enemies = this.currentStage.enemies.map((enemy) => new Enemy(enemy.x, enemy.y, enemy.vx, enemy));
     this.crystals = this.currentStage.crystals.map((crystal) => new Crystal(crystal.x, crystal.y));
     this.goal = { ...this.currentStage.goal };
     this.particles = [];
+    this.floatingTexts = [];
     this.player.reset();
     this.powerUps = this.currentStage.powerUps.map((item) => new PowerUp(item.x, item.y));
+    this.lavaSurfaceY = HEIGHT;
   }
 
   start() {
@@ -735,6 +750,7 @@ class Game {
     if (gameState !== 'playing') return;
 
     frame++;
+    this.updateStageSpecials();
     this.player.update();
     this.updateCamera();
 
@@ -759,7 +775,12 @@ class Game {
       particle.update();
     }
 
+    for (const text of this.floatingTexts) {
+      text.update();
+    }
+
     this.particles = this.particles.filter((p) => p.life > 0);
+    this.floatingTexts = this.floatingTexts.filter((t) => t.life > 0);
 
     if (this.player.y > HEIGHT + 200) {
       loseLife();
@@ -769,6 +790,53 @@ class Game {
   updateCamera() {
     const target = this.player.x + this.player.w / 2 - WIDTH / 2;
     cameraX = Math.max(0, Math.min(target, this.currentStage.worldWidth - WIDTH));
+  }
+
+  updateStageSpecials() {
+    if (this.currentStage.movingPlatforms && this.currentStage.movingPlatforms.length) {
+      for (const platform of this.movingPlatforms) {
+        if (platform.axis === 'horizontal' && platform.range) {
+          platform.x = platform.baseX + Math.sin(frame * 0.04 + platform.phase) * platform.range;
+        } else if (platform.axis === 'circle' && platform.r) {
+          const angle = frame * 0.03 + platform.phase;
+          platform.x = platform.baseX + Math.cos(angle) * platform.r;
+          platform.y = platform.baseY + Math.sin(angle) * platform.r * 0.35;
+        }
+      }
+      this.blocks = [...this.staticBlocks, ...this.movingPlatforms.map((p) => ({ ...p }))];
+    }
+
+    if (this.currentStage.risingLava) {
+      const lava = this.currentStage.risingLava;
+      const lowerBound = HEIGHT;
+      const upperBound = typeof lava.upperBound === 'number'
+        ? lava.upperBound
+        : 90;
+      const amplitude = Math.max(120, lowerBound - upperBound);
+
+      const introFrames = 260;
+      const introProgress = Math.min(1, frame / introFrames);
+      const easedRise = introProgress * introProgress * (3 - 2 * introProgress);
+      const progress = frame < introFrames
+        ? easedRise
+        : 0.5 + 0.5 * Math.sin((frame - introFrames) * 0.012 * (lava.speed + 0.6) + Math.PI / 2);
+      this.lavaSurfaceY = lowerBound - amplitude * progress;
+
+      if (this.player.y + this.player.h >= this.lavaSurfaceY && this.player.invulnerable <= 0) {
+        playDamageSound();
+        this.player.invulnerable = 60;
+        loseLife();
+      }
+    }
+
+    for (const zone of this.currentStage.dangerZones || []) {
+      if (rectsOverlap(this.player, zone) && this.player.invulnerable <= 0) {
+        playDamageSound();
+        this.player.invulnerable = 50;
+        loseLife();
+        break;
+      }
+    }
   }
 
   handleCrystalCollection() {
@@ -799,6 +867,9 @@ class Game {
 
           if (!poweredDown) {
               this.player.invulnerable = 90;
+              const taunts = ['ざまあwww', '人間以下www', '下手www', 'やめちまえwww'];
+              const taunt = taunts[Math.floor(Math.random() * taunts.length)];
+              this.floatingTexts.push(new FloatingText(enemy.x + enemy.w / 2, enemy.y - 8, taunt, '#fef2f2'));
               loseLife();
           }
         }
@@ -860,10 +931,67 @@ class Game {
     drawGoal();
     drawHud();
     drawOverlay();
+
+    for (const text of this.floatingTexts) {
+      text.draw();
+    }
   }
 }
 
 const game = new Game();
+
+// --- Stage select UI wiring ---
+const stageSelectBtn = document.getElementById('open-stage-select');
+const stageOverlay = document.getElementById('stage-select');
+const closeStageBtn = document.getElementById('close-stage-select');
+
+if (stageSelectBtn && stageOverlay) {
+  stageSelectBtn.addEventListener('click', () => {
+    console.log('stageSelectBtn clicked, overlay hidden:', stageOverlay.hidden);
+    stageOverlay.hidden = !stageOverlay.hidden;
+  });
+
+  // クリックでオーバーレイの背景をクリックしたら閉じる（フォールバック）
+  stageOverlay.addEventListener('click', (e) => {
+    console.log('stageOverlay click target:', e.target);
+    if (e.target === stageOverlay) {
+      console.log('overlay background clicked — closing');
+      stageOverlay.hidden = true;
+    }
+  });
+
+  // Escキーで閉じるフォールバック
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !stageOverlay.hidden) {
+      stageOverlay.hidden = true;
+    }
+  });
+
+  if (closeStageBtn) {
+    closeStageBtn.addEventListener('click', (e) => {
+      console.log('closeStageBtn clicked');
+      e.stopPropagation();
+      stageOverlay.hidden = true;
+    });
+  }
+} else {
+  console.warn('Stage select elements missing in DOM');
+}
+
+for (const btn of document.querySelectorAll('.stage-buttons button')) {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const idx = Number(e.currentTarget.dataset.stage);
+    if (!Number.isNaN(idx) && idx >= 0 && idx < STAGES.length) {
+      game.currentStageIndex = idx;
+      game.initStage();
+      cameraX = 0;
+      gameState = 'playing';
+      if (stageOverlay) stageOverlay.hidden = true;
+      startStageBgm();
+    }
+  });
+}
 
 function rectsOverlap(a, b) {
   return a.x < b.x + b.w &&
@@ -890,7 +1018,9 @@ function loseLife() {
     stopStageBgm();
     gameState = 'gameover';
   } else {
-    game.player.reset();
+    game.initStage();
+    cameraX = 0;
+    frame = 0;
     game.player.invulnerable = 90;
     gameState = 'miss';
     setTimeout(() => {
@@ -909,43 +1039,149 @@ function spawnBurst(x, y, color) {
 
 function drawBackground() {
   const stageTwo = game.currentStageIndex === 1;
-  ctx.fillStyle = stageTwo ? '#6c7cff' : '#8edbff';
-  ctx.fillRect(0, 0, WIDTH, HEIGHT);
+  const stageThree = game.currentStageIndex === 2;
+  const stageFour = game.currentStageIndex === 3;
+  const stageFive = game.currentStageIndex === 4;
 
-  // 空の雲
-  const cloudX = (frame * 0.04) % 1200;
-  ctx.fillStyle = 'rgba(255,255,255,0.95)';
-  for (let i = 0; i < 5; i++) {
-    const x = (i * 240 - cloudX) % 1400 - 200;
+  if (stageFive) {
+    const grd = ctx.createLinearGradient(0, 0, 0, HEIGHT);
+    grd.addColorStop(0, '#140b0a');
+    grd.addColorStop(0.5, '#3b120f');
+    grd.addColorStop(1, '#6a1b0b');
+    ctx.fillStyle = grd;
+    ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+    ctx.fillStyle = 'rgba(255,140,60,0.25)';
+    for (let i = 0; i < 18; i++) {
+      const x = (i * 170 + frame * 0.5) % (WIDTH + 120) - 60;
+      const y = 140 + (i % 5) * 40;
+      ctx.fillRect(x, y, 120, 16);
+    }
+
+    ctx.fillStyle = '#8d2712';
+    ctx.fillRect(0, 380, WIDTH, 140);
+  } else if (stageFour) {
+    const grd = ctx.createLinearGradient(0, 0, 0, HEIGHT);
+    grd.addColorStop(0, '#2d1347');
+    grd.addColorStop(0.6, '#7c2d12');
+    grd.addColorStop(1, '#f59e0b');
+    ctx.fillStyle = grd;
+    ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+    ctx.fillStyle = 'rgba(255,255,255,0.9)';
     ctx.beginPath();
-    ctx.arc(x + 70, 100, 24, 0, Math.PI * 2);
-    ctx.arc(x + 100, 85, 30, 0, Math.PI * 2);
-    ctx.arc(x + 130, 100, 24, 0, Math.PI * 2);
+    ctx.arc(760, 90, 48, 0, Math.PI * 2);
     ctx.fill();
+
+    ctx.fillStyle = 'rgba(255,255,255,0.7)';
+    for (let i = 0; i < 8; i++) {
+      const x = (i * 150 + frame * 0.3) % (WIDTH + 100) - 80;
+      ctx.fillRect(x, 40 + (i % 3) * 40, 80, 10);
+    }
+
+    ctx.fillStyle = '#1f2937';
+    ctx.fillRect(0, 380, WIDTH, 140);
+  } else if (stageThree) {
+    // 氷世界の背景（薄いグラデーション）
+    const grd = ctx.createLinearGradient(0, 0, 0, HEIGHT);
+    grd.addColorStop(0, '#e6f0ff');
+    grd.addColorStop(0.6, '#cfe9ff');
+    grd.addColorStop(1, '#dff6ff');
+    ctx.fillStyle = grd;
+    ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+    // 軽い雪の演出
+    ctx.fillStyle = 'rgba(255,255,255,0.9)';
+    for (let i = 0; i < 60; i++) {
+      const sx = (i * 97 + frame * 0.6) % (WIDTH + 200) - 100;
+      const sy = ((i * 61 + frame * 0.8) % (HEIGHT + 300)) - 100;
+      const r = (i % 3) + 1;
+      ctx.beginPath();
+      ctx.arc(sx, sy, r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // 低めの氷の山並み
+    ctx.fillStyle = '#bfe6ff';
+    ctx.beginPath();
+    ctx.moveTo(0, 300);
+    ctx.lineTo(120, 240);
+    ctx.lineTo(260, 300);
+    ctx.lineTo(420, 200);
+    ctx.lineTo(590, 300);
+    ctx.lineTo(760, 260);
+    ctx.lineTo(960, 280);
+    ctx.lineTo(WIDTH, 220);
+    ctx.lineTo(WIDTH, HEIGHT);
+    ctx.lineTo(0, HEIGHT);
+    ctx.closePath();
+    ctx.fill();
+
+    // 地面色
+    ctx.fillStyle = '#eafcff';
+    ctx.fillRect(0, 380, WIDTH, 140);
+  } else {
+    ctx.fillStyle = stageTwo ? '#6c7cff' : '#8edbff';
+    ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+    // 空の雲
+    const cloudX = (frame * 0.04) % 1200;
+    ctx.fillStyle = 'rgba(255,255,255,0.95)';
+    for (let i = 0; i < 5; i++) {
+      const x = (i * 240 - cloudX) % 1400 - 200;
+      ctx.beginPath();
+      ctx.arc(x + 70, 100, 24, 0, Math.PI * 2);
+      ctx.arc(x + 100, 85, 30, 0, Math.PI * 2);
+      ctx.arc(x + 130, 100, 24, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // 山並み
+    ctx.fillStyle = stageTwo ? '#5a6fd1' : '#73b8e8';
+    ctx.beginPath();
+    ctx.moveTo(0, 270);
+    ctx.lineTo(160, 220);
+    ctx.lineTo(260, 270);
+    ctx.lineTo(420, 180);
+    ctx.lineTo(590, 270);
+    ctx.lineTo(760, 220);
+    ctx.lineTo(960, 250);
+    ctx.lineTo(WIDTH, 200);
+    ctx.lineTo(WIDTH, HEIGHT);
+    ctx.lineTo(0, HEIGHT);
+    ctx.closePath();
+    ctx.fill();
+
+    // 地面の色
+    ctx.fillStyle = stageTwo ? '#c4d7b8' : '#d3f2bd';
+    ctx.fillRect(0, 380, WIDTH, 140);
   }
-
-  // 山並み
-  ctx.fillStyle = stageTwo ? '#5a6fd1' : '#73b8e8';
-  ctx.beginPath();
-  ctx.moveTo(0, 270);
-  ctx.lineTo(160, 220);
-  ctx.lineTo(260, 270);
-  ctx.lineTo(420, 180);
-  ctx.lineTo(590, 270);
-  ctx.lineTo(760, 220);
-  ctx.lineTo(960, 250);
-  ctx.lineTo(WIDTH, 200);
-  ctx.lineTo(WIDTH, HEIGHT);
-  ctx.lineTo(0, HEIGHT);
-  ctx.closePath();
-  ctx.fill();
-
-  // 地面の色
-  ctx.fillStyle = stageTwo ? '#c4d7b8' : '#d3f2bd';
-  ctx.fillRect(0, 380, WIDTH, 140);
 }
 
 function drawStage() {
+  if (game.currentStage && game.currentStage.lowGravityAreas) {
+    for (const area of game.currentStage.lowGravityAreas) {
+      ctx.fillStyle = 'rgba(180,220,255,0.12)';
+      ctx.fillRect(area.x - cameraX, area.y, area.w, area.h);
+      ctx.strokeStyle = 'rgba(150,200,255,0.25)';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(area.x - cameraX, area.y, area.w, area.h);
+    }
+  }
+  if (game.currentStage && game.currentStage.risingLava) {
+    ctx.fillStyle = '#ff7a1a';
+    ctx.fillRect(0, game.lavaSurfaceY, WIDTH, HEIGHT - game.lavaSurfaceY);
+    ctx.fillStyle = 'rgba(255,255,255,0.18)';
+    ctx.fillRect(0, game.lavaSurfaceY + 8, WIDTH, 18);
+  }
+
+  for (const zone of game.currentStage.dangerZones || []) {
+    ctx.fillStyle = 'rgba(255,120,40,0.16)';
+    ctx.fillRect(zone.x - cameraX, zone.y, zone.w, zone.h);
+    ctx.strokeStyle = 'rgba(255,180,60,0.6)';
+    ctx.strokeRect(zone.x - cameraX, zone.y, zone.w, zone.h);
+  }
+
   for (const block of game.blocks) {
     if (block.type === 'ground') {
       ctx.fillStyle = '#7a4a1d';
@@ -955,14 +1191,31 @@ function drawStage() {
       ctx.fillStyle = '#4a2b11';
       ctx.fillRect(block.x - cameraX, block.y + block.h - 10, block.w, 10);
     } else if (block.type === 'platform') {
-      ctx.fillStyle = '#5fae59';
-      ctx.fillRect(block.x - cameraX, block.y, block.w, block.h);
-      ctx.fillStyle = '#7ed957';
-      ctx.fillRect(block.x - cameraX, block.y, block.w, 6);
-      ctx.fillStyle = '#3b7840';
-      ctx.fillRect(block.x - cameraX + 8, block.y + 6, block.w - 16, 4);
-      ctx.fillStyle = '#2f4f2f';
-      ctx.fillRect(block.x - cameraX + 12, block.y + 2, 6, 4);
+      if (block.moving) {
+        ctx.fillStyle = '#f59e0b';
+        ctx.fillRect(block.x - cameraX, block.y, block.w, block.h);
+        ctx.fillStyle = '#fde68a';
+        ctx.fillRect(block.x - cameraX, block.y, block.w, 5);
+        ctx.fillStyle = '#7c2d12';
+        ctx.fillRect(block.x - cameraX + 8, block.y + 6, block.w - 16, 4);
+      } else if (block.slippery) {
+        // 氷のプラットフォーム
+        ctx.fillStyle = '#dff8ff';
+        ctx.fillRect(block.x - cameraX, block.y, block.w, block.h);
+        ctx.fillStyle = '#bfeeff';
+        ctx.fillRect(block.x - cameraX, block.y, block.w, 6);
+        ctx.fillStyle = '#9fdfff';
+        ctx.fillRect(block.x - cameraX + 8, block.y + 6, block.w - 16, 4);
+      } else {
+        ctx.fillStyle = '#5fae59';
+        ctx.fillRect(block.x - cameraX, block.y, block.w, block.h);
+        ctx.fillStyle = '#7ed957';
+        ctx.fillRect(block.x - cameraX, block.y, block.w, 6);
+        ctx.fillStyle = '#3b7840';
+        ctx.fillRect(block.x - cameraX + 8, block.y + 6, block.w - 16, 4);
+        ctx.fillStyle = '#2f4f2f';
+        ctx.fillRect(block.x - cameraX + 12, block.y + 2, 6, 4);
+      }
     } else if (block.type === 'gap') {
       ctx.fillStyle = '#2d4f5d';
       ctx.fillRect(block.x - cameraX, block.y, block.w, block.h);

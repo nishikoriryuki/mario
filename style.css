@@ -18,6 +18,62 @@ body {
   background: #111827;
 }
 
+.stage-select-button {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  background: #111827;
+  color: #fef3c7;
+  border: 2px solid #fef3c7;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 40;
+}
+
+.stage-select-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: grid;
+  place-items: center;
+  z-index: 50;
+}
+
+/* Ensure the HTML `hidden` attribute hides the overlay (CSS may otherwise override it) */
+.stage-select-overlay[hidden] {
+  display: none !important;
+}
+
+.stage-select {
+  background: #0b1220;
+  color: #fef3c7;
+  border: 3px solid #fef3c7;
+  padding: 18px;
+  width: 420px;
+  text-align: center;
+  pointer-events: auto;
+}
+
+.stage-select .stage-buttons button {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px 8px;
+  background: #07203a;
+  color: #fef3c7;
+  border: 1px solid #9fb8ff;
+  cursor: pointer;
+}
+
+.stage-select .close {
+  margin-top: 12px;
+  padding: 8px 10px;
+  background: #222;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
 canvas {
   display: block;
   image-rendering: pixelated;
